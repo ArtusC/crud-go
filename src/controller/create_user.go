@@ -18,8 +18,8 @@ func (uc *userControllerInterface) CreateUser(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&userRequest); err != nil {
 		logger.Error("Error trying to marshal object", err, zap.String("journey", "createUser"))
-		restErr := validation.ValidateUserError(err)
-		c.JSON(restErr.Code, restErr)
+		rest_err := validation.ValidateUserError(err)
+		c.JSON(rest_err.Code, rest_err)
 		return
 	}
 

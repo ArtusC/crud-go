@@ -2,12 +2,12 @@ package service
 
 import (
 	"github.com/ArtusC/crud-go/src/configuration/logger"
-	restErr "github.com/ArtusC/crud-go/src/configuration/restErr"
+	rest_err "github.com/ArtusC/crud-go/src/configuration/rest_err"
 	"github.com/ArtusC/crud-go/src/model"
 	"go.uber.org/zap"
 )
 
-func (ud *userDomainService) CreateUser(userDomain model.UserDomainInterface) *restErr.RestErr {
+func (ud *userDomainService) CreateUser(userDomain model.UserDomainInterface) *rest_err.RestErr {
 	logger.Info("Init createUser model", zap.String("journey", "createUser"))
 
 	userDomain.EncryptPassword()
